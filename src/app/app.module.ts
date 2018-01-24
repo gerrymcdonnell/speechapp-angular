@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { WordindexComponent } from './components/words/wordindex/wordindex.component';
 import{NavbarComponent} from './components/navbar/navbar.component';
 import{PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import{AddWordComponent} from './components/words/add-word/add-word.component';
+import{EditwordComponent} from './components/words/edit-word/edit-word.component';
 
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
@@ -18,6 +20,10 @@ import { SpeechAppService } from './services/speechapp.service';
 //create routes for app
 const appRoutes:Routes=[
   {path:'',component:WordindexComponent},
+  {path:'word-index',component:WordindexComponent},
+  {path:'add-word',component:AddWordComponent},
+  {path:'edit-word/:id',component:EditwordComponent} ,
+  {path:'**',component:PageNotFoundComponent}
   /*{path:'',component:SandboxComponent2}*/
   /*{path:'about',component:AboutComponent}*/
 ]
@@ -26,13 +32,15 @@ const appRoutes:Routes=[
   declarations: [
     AppComponent,
     WordindexComponent,
-    NavbarComponent,PageNotFoundComponent
+    NavbarComponent,PageNotFoundComponent,
+    AddWordComponent,EditwordComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes)
+    
     /*FlashMessagesModule.forRoot()*/
   ],
   providers: [SpeechAppService],
