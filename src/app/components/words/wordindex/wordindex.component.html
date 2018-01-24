@@ -1,0 +1,22 @@
+<h1 class="special"> hello from sandbox 3 html file </h1>
+
+Testing cakephp 3 restapi words.json
+
+http://localhost/cake3restapi/words.json
+
+<a [routerLink]="['/add-word/']" class="btn btn-secondary">add</a>
+
+
+<h2>1. List of words</h2>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let word of words">        
+        {{word.id}}
+
+        {{word.wordtitle}}
+
+        <a [routerLink]="['/edit-word/'+word.id]" class="btn btn-secondary">Edit</a>
+
+        <button class="btn btn-danger btn-sm" (click)="onDeleteClick(word.id)">delete</button>
+    </li>
+</ul>
+<p></p>
