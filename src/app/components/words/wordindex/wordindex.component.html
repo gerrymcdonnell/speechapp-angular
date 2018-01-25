@@ -8,14 +8,29 @@ http://localhost/cake3restapi/words.json
 
 <h2>List of words</h2>
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let word of words">        
-        {{word.id}}
+    <li class="list-group-item" *ngFor="let word of words">    
+      
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Word:      {{word.wordtitle}}</h5>
+              <small>ID: {{word.id}}   </small>
+            </div>
+            <p class="mb-1">
+                Syllables: {{word.word_syllables}}
+            </p>
+            <small>Created: {{word.created}}</small>
+            <small>Modified: {{word.modified}}</small>
+        </a>
 
-        {{word.wordtitle}}
 
-        <a [routerLink]="['/edit-word/'+word.id]" class="btn btn-secondary">Edit</a>
+        
 
-        <button class="btn btn-danger btn-sm" (click)="onDeleteClick(word.id)">delete</button>
+
+        <p class="mb-1">
+          <a [routerLink]="['/edit-word/'+word.id]" class="btn btn-secondary">Edit</a>
+          <button class="btn btn-danger" (click)="onDeleteClick(word.id)">delete</button>
+      </p>
+
     </li>
 </ul>
 <p></p>
