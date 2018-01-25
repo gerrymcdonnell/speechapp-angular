@@ -20,14 +20,39 @@ export class SpeechAppService{
         
     }
 
-    //http://localhost/speechapp/rest_words/index.json
+    //base64 encode
+    buildHttpBasicAuthString(username,password){
+		return 	 btoa(username + ":" + password);
+    }
+    
+    //build header object
+    buildAuthHeader(){
+        var headers;        
+        var auth = this.buildHttpBasicAuthString("gerry","ted");
+        headers = {"Authorization": "Basic " + auth};
+        return headers;
+    }
+
+    //http://localhost/cake3restapi/words.json
+    //word index
+    /*
+    help from;
+    https://stackoverflow.com/questions/34413732/add-http-basic-authentication-to-this-http-get-in-angularjs
+    */
     getWords(){
-         return this.http.get('http://localhost/cake3restapi/words.json').map(res=>res.json());        
+        //build auth headers       
+        var headers=this.buildAuthHeader();
+
+         return this.http.get('http://localhost/cake3restapi/words.json',{headers: headers})
+         .map(res=>res.json());        
     }
 
     getWord(id:number){
-        console.log("get word id:"+id);
-        return this.http.get('http://localhost/cake3restapi/words/'+id+'.json').map(res=>res.json());
+        
+        var headers=this.buildAuthHeader();
+
+        return this.http.get('http://localhost/cake3restapi/words/'+id+'.json',{headers: headers})
+        .map(res=>res.json());
     }
 
 
