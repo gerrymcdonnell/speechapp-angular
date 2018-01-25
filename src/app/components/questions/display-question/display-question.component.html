@@ -1,14 +1,8 @@
-<p>
-  display-question works!
-
-  Display question and allow user to select an answer
-</p>
-
-<h2>Questions</h2>
+<h2>Display Questions to user</h2>
 <ul class="list-group">
     <li class="list-group-item">    
       
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div  class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">Question:      {{question.question}}</h5>
               <small>ID: {{question.id}}   </small>
@@ -28,15 +22,22 @@
                 <li> Difficulty: {{question.difficulty}}</li>
             </ul>        
            
-            
-            
+            <br>
+            <!-- answer options -->
+            <ul>
+            <li><input type="radio" name="selectedanswer" value="{{question.ans1}}">{{question.ans1}}</li>
+            <li><input type="radio" name="selectedanswer" value="{{question.ans2}}"> {{question.ans2}}</li>
+                <li><input type="radio" name="selectedanswer" value="other"> Other </li>
+            </ul>
+            <!-- answer options -->
+
             <hr>
                 <ul>
                   <li>Created: {{question.created|date: 'dd/MM/yyyy hh:mm:ss'}}</li>
                   <li>Modified: {{question.modified|date: 'dd/MM/yyyy hh:mm:ss'}}</li>
                 </ul>   
             
-        </a>
+            </div>
 
 
         
