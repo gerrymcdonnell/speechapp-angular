@@ -15,17 +15,31 @@ http://localhost/cake3restapi/words.json
               <h5 class="mb-1">Word:      {{word.wordtitle}}</h5>
               <small>ID: {{word.id}}   </small>
             </div>
+
             <p class="mb-1">
                 Syllables: {{word.word_syllables}}
             </p>
-            <small>Created: {{word.created}}</small>
-            <small>Modified: {{word.modified}}</small>
+
+            
+            <p class="mb-1">
+            <a href="https://www.howmanysyllables.com/words/{{word.wordtitle}}">Syllables Check: {{word.wordtitle}}</a>
+            </p>
+            
+            
+            
+              
+              <ul>
+                  <li>Created: {{word.created|date: 'dd/MM/yyyy hh:mm:ss'}}</li>
+                  <li>Modified: {{word.modified|date: 'dd/MM/yyyy hh:mm:ss'}}</li>
+              </ul>
+            
+            
         </a>
 
 
         
 
-
+        
         <p class="mb-1">
           <a [routerLink]="['/edit-word/'+word.id]" class="btn btn-secondary">Edit</a>
           <button class="btn btn-danger" (click)="onDeleteClick(word.id)">delete</button>
