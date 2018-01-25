@@ -1,3 +1,53 @@
-<p>
-  questionindex works!
-</p>
+
+Testing cakephp 3 restapi words.json
+
+http://localhost/cake3restapi/words.json
+
+<a [routerLink]="['/add-word/']" class="btn btn-secondary">add</a>
+
+
+<h2>Questions</h2>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let q of questions">    
+      
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Question:      {{q.question}}</h5>
+              <small>ID: {{q.id}}   </small>
+            </div>
+
+            <p class="mb-1">
+                Answers: 
+            </p>
+
+            <ul>
+                <li> {{q.ans1}}</li>
+                <li> {{q.ans2}}</li>
+                <li> {{q.ans3}}</li>
+                <li> {{q.ans4}}</li>
+            </ul>
+            
+                      
+            
+            
+            <hr>
+                <ul>
+                  <li>Created: {{q.created|date: 'dd/MM/yyyy hh:mm:ss'}}</li>
+                  <li>Modified: {{q.modified|date: 'dd/MM/yyyy hh:mm:ss'}}</li>
+                </ul>
+            
+            
+        </a>
+
+
+        
+
+        
+        <p class="mb-1">
+          <a [routerLink]="['/edit-word/'+q.id]" class="btn btn-secondary">Edit</a>
+          <button class="btn btn-danger" (click)="onDeleteClick(q.id)">delete</button>
+      </p>
+
+    </li>
+</ul>
+<p></p>
