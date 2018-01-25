@@ -39,7 +39,7 @@ export class QuestionsService {
         
     var headers=this.buildAuthHeader();
 
-    return this.http.get('http://localhost/cake3restapi/questions/view/'+id+'.json',{headers: headers})
+    return this.http.get('http://localhost/cake3restapi/questions/'+id+'.json',{headers: headers})
     .map(res=>res.json());
   }
 
@@ -50,7 +50,7 @@ export class QuestionsService {
       
       var headers=this.buildAuthHeader();
 
-      return this.http.put('http://localhost:80/cake3restapi/questions/edit/'+question.id+'.json', question,{headers: headers})
+      return this.http.put('http://localhost:80/cake3restapi/questions/'+question.id+'.json', question,{headers: headers})
           .map(res => console.log("updateWord Result:"+res.json()));
   }
   
