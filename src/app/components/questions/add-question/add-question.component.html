@@ -49,6 +49,7 @@
           <div *ngIf="ans1.errors?.minlength && ans1.touched" class="alert alert-danger">Answer A should be at least 12 characters</div>
         </div>
 
+
         <div class="form-group">
           <label for="Ans1">Ans2</label>
           <input 
@@ -56,10 +57,11 @@
             class="form-control"
             [(ngModel)]="question.ans2"
             name="ans2"
-            #questionTitle="ngModel"          
+            #ans2="ngModel"          
           >    
         </div>
 
+        
         <div class="form-group">
           <label for="Ans1">Ans3</label>
           <input 

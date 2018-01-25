@@ -30,7 +30,9 @@ import { DisplayQuestionComponent } from './components/questions/display-questio
 
 //create routes for app
 const appRoutes:Routes=[
-  {path:'',component:WordindexComponent},
+  /*{path:'',component:WordindexComponent},*/
+
+  {path:'',component:QuestionindexComponent},
   {path:'word-index',component:WordindexComponent},
   {path:'add-word',component:AddWordComponent},
   {path:'edit-word/:id',component:EditwordComponent} ,
@@ -40,8 +42,7 @@ const appRoutes:Routes=[
   {path:'add-question',component:AddQuestionComponent} ,
   {path:'display-question/:id',component:DisplayQuestionComponent} ,
   {path:'**',component:PageNotFoundComponent}
-  /*{path:'',component:SandboxComponent2}*/
-  /*{path:'about',component:AboutComponent}*/
+
 ]
 
 @NgModule({
