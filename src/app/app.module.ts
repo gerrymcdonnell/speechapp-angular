@@ -25,6 +25,7 @@ import { SpeechAppService } from './services/speechapp.service';
 import {QuestionsService} from'./services/questions.service';
 import { EditQuestionComponent } from './components/questions/edit-question/edit-question.component';
 import { AddQuestionComponent } from './components/questions/add-question/add-question.component';
+import { DisplayQuestionComponent } from './components/questions/display-question/display-question.component';
 
 
 //create routes for app
@@ -37,6 +38,7 @@ const appRoutes:Routes=[
   {path:'question-index',component:QuestionindexComponent},
   {path:'edit-question/:id',component:EditQuestionComponent} ,
   {path:'add-question',component:AddQuestionComponent} ,
+  {path:'display-question/:id',component:DisplayQuestionComponent} ,
   {path:'**',component:PageNotFoundComponent}
   /*{path:'',component:SandboxComponent2}*/
   /*{path:'about',component:AboutComponent}*/
@@ -48,7 +50,7 @@ const appRoutes:Routes=[
     WordindexComponent,
     NavbarComponent,PageNotFoundComponent,
     AddWordComponent,EditwordComponent, 
-    QuestionindexComponent, EditQuestionComponent, AddQuestionComponent
+    QuestionindexComponent, EditQuestionComponent, AddQuestionComponent, DisplayQuestionComponent
   ],
   imports: [
     BrowserModule,

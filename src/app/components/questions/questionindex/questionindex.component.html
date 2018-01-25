@@ -21,13 +21,30 @@ http://localhost/cake3restapi/words.json
             </p>
 
             <ul>
-                <li> {{q.ans1}}</li>
-                <li> {{q.ans2}}</li>
-                <li> {{q.ans3}}</li>
-                <li> {{q.ans4}}</li>
+                <li> A {{q.ans1}}</li>
+                <li> B {{q.ans2}}</li>
+                <li> C {{q.ans3}}</li>
+                <li> D {{q.ans4}}</li>
+                <hr>
+                <li> Correct: {{q.correctans}}</li>
+                <li> Difficulty: {{q.difficulty}}</li>
             </ul>
             
-                      
+            <hr>
+            
+            <!-- simple ng if -->
+            <div *ngIf="q.correctans==1;">
+                Correct Answer: A {{q.ans1}}
+            </div>    
+            <div *ngIf="q.correctans==2;">
+                Correct Answer: B {{q.ans2}}
+            </div>
+            <div *ngIf="q.correctans==3;">
+                Correct Answer: C {{q.ans3}}
+            </div>
+            <div *ngIf="q.correctans==4;">
+                Correct Answer: D {{q.ans4}}
+            </div>
             
             
             <hr>
@@ -44,6 +61,7 @@ http://localhost/cake3restapi/words.json
 
         
         <p class="mb-1">
+          <a [routerLink]="['/display-question/'+q.id]" class="btn btn-secondary">display</a>
           <a [routerLink]="['/edit-question/'+q.id]" class="btn btn-secondary">Edit</a>
           <button class="btn btn-danger" (click)="onDeleteClick(q.id)">delete</button>
       </p>

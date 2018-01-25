@@ -38,7 +38,7 @@ export class EditQuestionComponent implements OnInit {
     // Get word with the id we pulled rom url 
     this.dataService.getQuestion(this.id).subscribe(q => {
       
-      console.log("edit word "+q.question);      
+      console.log("edit word "+q.question);    
       
       this.question = q;     
       

@@ -1,0 +1,53 @@
+<p>
+  display-question works!
+
+  Display question and allow user to select an answer
+</p>
+
+<h2>Questions</h2>
+<ul class="list-group">
+    <li class="list-group-item">    
+      
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Question:      {{question.question}}</h5>
+              <small>ID: {{question.id}}   </small>
+            </div>
+
+            <p class="mb-1">
+                Answers: 
+            </p>
+
+            <ul>
+                <li> A {{question.ans1}}</li>
+                <li> B {{question.ans2}}</li>
+                <li> C {{question.ans3}}</li>
+                <li> D {{question.ans4}}</li>
+                <hr>
+                <li> Correct: {{question.correctans}}</li>
+                <li> Difficulty: {{question.difficulty}}</li>
+            </ul>        
+           
+            
+            
+            <hr>
+                <ul>
+                  <li>Created: {{question.created|date: 'dd/MM/yyyy hh:mm:ss'}}</li>
+                  <li>Modified: {{question.modified|date: 'dd/MM/yyyy hh:mm:ss'}}</li>
+                </ul>   
+            
+        </a>
+
+
+        
+
+        
+        <p class="mb-1">
+          <a [routerLink]="['/display-question/'+question.id]" class="btn btn-secondary">display</a>
+          <a [routerLink]="['/edit-question/'+question.id]" class="btn btn-secondary">Edit</a>
+          <button class="btn btn-danger" (click)="onDeleteClick(question.id)">delete</button>
+      </p>
+
+    </li>
+</ul>
+<p></p>
