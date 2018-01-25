@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import {Http} from '@angular/http';
-
 import {Question} from '../models/question';
+//import obserable
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class QuestionsService {
@@ -40,6 +41,17 @@ export class QuestionsService {
 
     return this.http.get('http://localhost/cake3restapi/questions/view/'+id+'.json',{headers: headers})
     .map(res=>res.json());
+  }
+
+
+  update(question:Question){        
+
+      console.log("doing update via PUT request");
+      
+      var headers=this.buildAuthHeader();
+
+      return this.http.put('http://localhost:80/cake3restapi/questions/edit/'+question.id+'.json', question,{headers: headers})
+          .map(res => console.log("updateWord Result:"+res.json()));
   }
   
 
