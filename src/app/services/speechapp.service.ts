@@ -61,28 +61,31 @@ export class SpeechAppService{
     updateWord(word:Word){        
 
         console.log("doing update via PUT request");
-        console.log("edited word is"+word.wordtitle);
-        console.log(word);
+        
+        var headers=this.buildAuthHeader();
 
-        return this.http.put('http://localhost:80/cake3restapi/words/'+word.id+'.json', word)
+        return this.http.put('http://localhost:80/cake3restapi/words/'+word.id+'.json', word,{headers: headers})
             .map(res => console.log("updateWord Result:"+res.json()));
     }
 
 
-    //broke
+    //add new word
     addWord(word:Word){
         
         console.log("doing Add via POST request");
 
-        console.log(word);
+        var headers=this.buildAuthHeader();
         
-        return this.http.post('http://localhost:80/cake3restapi/words.json',word)
+        return this.http.post('http://localhost:80/cake3restapi/words.json',word,{headers: headers})
         .map(res=>console.log("addword"+res.json()));
     }
 
     //works
     deleteWord(id){
-        return this.http.delete('http://localhost:80/cake3restapi/words/'+id+'.json')
+
+        var headers=this.buildAuthHeader();
+
+        return this.http.delete('http://localhost:80/cake3restapi/words/'+id+'.json',{headers: headers})
         .map(res=>res.json());
     }
 
