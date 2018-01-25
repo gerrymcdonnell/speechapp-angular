@@ -23,6 +23,7 @@ import {RouterModule,Routes} from '@angular/router';
 import { SpeechAppService } from './services/speechapp.service';
 
 import {QuestionsService} from'./services/questions.service';
+import { EditQuestionComponent } from './components/questions/edit-question/edit-question.component';
 
 
 //create routes for app
@@ -33,6 +34,7 @@ const appRoutes:Routes=[
   {path:'edit-word/:id',component:EditwordComponent} ,
 
   {path:'question-index',component:QuestionindexComponent},
+  {path:'edit-question/:id',component:EditQuestionComponent} ,
 
   {path:'**',component:PageNotFoundComponent}
   /*{path:'',component:SandboxComponent2}*/
@@ -44,7 +46,7 @@ const appRoutes:Routes=[
     AppComponent,
     WordindexComponent,
     NavbarComponent,PageNotFoundComponent,
-    AddWordComponent,EditwordComponent, QuestionindexComponent
+    AddWordComponent,EditwordComponent, QuestionindexComponent, EditQuestionComponent
   ],
   imports: [
     BrowserModule,

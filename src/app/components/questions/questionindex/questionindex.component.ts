@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Question} from '../../../models/question';
 
 import {QuestionsService} from '../../../services/questions.service';
+
 @Component({
   selector: 'app-questionindex',
   templateUrl: './questionindex.component.html',

@@ -32,6 +32,15 @@ export class QuestionsService {
      return this.http.get('http://localhost/cake3restapi/questions.json',{headers: headers})
      .map(res=>res.json());        
   }
+
+
+  getQuestion(id:number){
+        
+    var headers=this.buildAuthHeader();
+
+    return this.http.get('http://localhost/cake3restapi/questions/view/'+id+'.json',{headers: headers})
+    .map(res=>res.json());
+  }
   
 
 }
