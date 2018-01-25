@@ -2,9 +2,7 @@
   <div class="col-md-6">
     <a [routerLink]="['/question-list']" href="#" class="btn btn-link"><i class="fa fa-arrow-circle-o-left"></i>  Back</a>
   </div>
-  <div class="col-md-6">
-    
-  </div>
+
 </div>
 
 <div class="card">
@@ -18,14 +16,21 @@
       
       
       <div class="form-group">
-        <label for="questiontitle">question</label>
+        <label for="question">question</label>
+        
         <input 
           type="text"
           class="form-control"
           [(ngModel)]="question.question"
           name="question"
-          #questionTitle="ngModel"          
-        >    
+          #txtquestion="ngModel"
+          minlength="12"
+          required          
+        > 
+        <!-- validation rules -->
+        <div *ngIf="txtquestion.errors?.required && txtquestion.touched" class="alert alert-danger">Question is required</div>
+        
+        
       </div>
 
 
