@@ -44,7 +44,7 @@ export class QuestionsService {
   }
 
 
-  update(question:Question){        
+  updateWord(question:Question){        
 
       console.log("doing update via PUT request");
       
@@ -52,6 +52,27 @@ export class QuestionsService {
 
       return this.http.put('http://localhost:80/cake3restapi/questions/'+question.id+'.json', question,{headers: headers})
           .map(res => console.log("updateWord Result:"+res.json()));
+  }
+
+
+  //delete
+  deleteQuestion(id){
+    var headers=this.buildAuthHeader();
+
+    return this.http.delete('http://localhost/cake3restapi/questions/'+id+'.json',{headers: headers})
+    .map(res=>res.json());
+  }
+
+
+  //add new word
+  addQuestion(question:Question){
+      
+    console.log("doing Add via POST request");
+
+    var headers=this.buildAuthHeader();
+    
+    return this.http.post('http://localhost/cake3restapi/questions.json',question,{headers: headers})
+    .map(res=>console.log(res.json()));
   }
   
 

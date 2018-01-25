@@ -52,7 +52,7 @@ export class EditQuestionComponent implements OnInit {
     if(isEdit){
         //edit user      
 
-        this.dataService.update(this.question).subscribe(question=>{
+        this.dataService.updateWord(this.question).subscribe(question=>{
             
             console.log("calling updateQuestion()");
 
