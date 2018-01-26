@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Question} from '../../../models/question';
+import {QuestionAnswer} from '../../../models/questionanswer';
 
 import {QuestionsService} from '../../../services/questions.service';
 import {Router, ActivatedRoute, Params } from '@angular/router';
@@ -16,6 +17,8 @@ export class DisplayQuestionComponent implements OnInit {
   id:number;
   question:Question=new Object;
   questions:any[];
+
+  questionAnswer:QuestionAnswer={};
 
   constructor(
     public dataService:QuestionsService,
@@ -33,7 +36,7 @@ export class DisplayQuestionComponent implements OnInit {
    }
 
   ngOnInit() {
-    // Get ID
+    // Get ID which is the question id
     this.id = this.route.snapshot.params['id'];
     
     // Get word with the id we pulled rom url 
@@ -44,6 +47,28 @@ export class DisplayQuestionComponent implements OnInit {
       this.question = q;     
       
     });
+  }
+
+
+  /*** 
+   * answer a question by creating a record for questions-answers
+   */
+  onAnswerClick(question_id:number,selectedanswer:number){
+    console.log('answer question '+selectedanswer);
+
+    
+    this.questionAnswer.user_id=1;
+    this.questionAnswer.question_id=question_id;
+    this.questionAnswer.selectedanswer=selectedanswer;
+
+    this.dataService.answerQuestion(this.questionAnswer).subscribe(q => {
+      
+      console.log(+q); 
+      
+      //this.question = q;     
+      
+    });
+
   }
 
 }

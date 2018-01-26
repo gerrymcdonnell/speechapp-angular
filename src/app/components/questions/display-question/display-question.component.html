@@ -27,7 +27,10 @@
             <ul>
             <li><input type="radio" name="selectedanswer" value="{{question.ans1}}">{{question.ans1}}</li>
             <li><input type="radio" name="selectedanswer" value="{{question.ans2}}"> {{question.ans2}}</li>
-                <li><input type="radio" name="selectedanswer" value="other"> Other </li>
+            <li><input type="radio" name="selectedanswer" value="{{question.ans3}}"> {{question.ans3}}</li>
+            <li><input type="radio" name="selectedanswer" value="{{question.ans4}}"> {{question.ans4}}</li>
+
+                
             </ul>
             <!-- answer options -->
 
@@ -44,6 +47,8 @@
 
         
         <p class="mb-1">
+          <button class="btn btn-danger" (click)="onAnswerClick(question.id,this.selectedanswer)">Answer</button>
+
           <a [routerLink]="['/display-question/'+question.id]" class="btn btn-secondary">display</a>
           <a [routerLink]="['/edit-question/'+question.id]" class="btn btn-secondary">Edit</a>
           <button class="btn btn-danger" (click)="onDeleteClick(question.id)">delete</button>

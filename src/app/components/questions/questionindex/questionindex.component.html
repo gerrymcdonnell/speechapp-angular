@@ -10,7 +10,7 @@ http://localhost/cake3restapi/words.json
 <ul class="list-group">
     <li class="list-group-item" *ngFor="let q of questions">    
       
-        <div class="list-group-item list-group-item-action flex-column align-items-start">
+        <a [routerLink]="['/display-question/'+q.id]" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">Question:      {{q.question}}</h5>
               <small>ID: {{q.id}}   </small>
@@ -54,7 +54,7 @@ http://localhost/cake3restapi/words.json
                 </ul>
             
             
-            </div>
+        </a>
 
 
         

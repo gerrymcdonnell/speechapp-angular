@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import {Http} from '@angular/http';
+
 import {Question} from '../models/question';
+import {QuestionAnswer} from '../models/questionanswer';
+
 //import obserable
 import {Observable} from 'rxjs/Observable';
 
@@ -41,6 +44,9 @@ export class QuizzesService {
     return this.http.get('http://localhost/cake3restapi/quizzes/'+id+'.json',{headers: headers})
     .map(res=>res.json());
   }
+
+
+
 
 
   

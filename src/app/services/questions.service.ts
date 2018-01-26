@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import {Http} from '@angular/http';
 import {Question} from '../models/question';
+import {QuestionAnswer} from '../models/questionanswer';
 //import obserable
 import {Observable} from 'rxjs/Observable';
 
@@ -74,6 +75,18 @@ export class QuestionsService {
     return this.http.post('http://localhost/cake3restapi/questions.json',question,{headers: headers})
     .map(res=>console.log(res.json()));
   }
+
+
+    //submit question anwser for a questions
+    answerQuestion(questionAnswer:QuestionAnswer){
+    
+      console.log("doing answerQuestion via POST request");
+  
+      var headers=this.buildAuthHeader();
+      
+      return this.http.post('http://localhost/cake3restapi/questions.json',questionAnswer,{headers: headers})
+      .map(res=>console.log(res.json()));
+    }
   
 
 }
