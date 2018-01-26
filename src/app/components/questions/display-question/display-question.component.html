@@ -25,10 +25,10 @@
             <br>
             <!-- answer options -->
             <ul>
-            <li><input type="radio" name="selectedanswer" value="{{question.ans1}}">{{question.ans1}}</li>
-            <li><input type="radio" name="selectedanswer" value="{{question.ans2}}"> {{question.ans2}}</li>
-            <li><input type="radio" name="selectedanswer" value="{{question.ans3}}"> {{question.ans3}}</li>
-            <li><input type="radio" name="selectedanswer" value="{{question.ans4}}"> {{question.ans4}}</li>
+            <li><input type="radio" ng-model="selectedanswer" name="selectedanswer" value="1">{{question.ans1}}</li>
+            <li><input type="radio" ng-model="selectedanswer" name="selectedanswer" value="2"> {{question.ans2}}</li>
+            <li><input type="radio" ng-model="selectedanswer" name="selectedanswer" value="3"> {{question.ans3}}</li>
+            <li><input type="radio" ng-model="selectedanswer" name="selectedanswer" value="4"> {{question.ans4}}</li>
 
                 
             </ul>
@@ -47,7 +47,8 @@
 
         
         <p class="mb-1">
-          <button class="btn btn-danger" (click)="onAnswerClick(question.id,this.selectedanswer)">Answer</button>
+        <!-- to do pass values to function here -->
+          <button class="btn btn-danger" (click)="onAnswerClick(question.id,2)">Answer</button>
 
           <a [routerLink]="['/display-question/'+question.id]" class="btn btn-secondary">display</a>
           <a [routerLink]="['/edit-question/'+question.id]" class="btn btn-secondary">Edit</a>

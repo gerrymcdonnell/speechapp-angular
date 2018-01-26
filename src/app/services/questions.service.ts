@@ -77,14 +77,15 @@ export class QuestionsService {
   }
 
 
+    //ERRORS here
     //submit question anwser for a questions
-    answerQuestion(questionAnswer:QuestionAnswer){
+    addAnswerQuestion(questionAnswer:QuestionAnswer){
     
-      console.log("doing answerQuestion via POST request");
+      console.log(questionAnswer);
   
       var headers=this.buildAuthHeader();
       
-      return this.http.post('http://localhost/cake3restapi/questions.json',questionAnswer,{headers: headers})
+      return this.http.post('http://localhost/cake3restapi/questions-answers.json',questionAnswer,{headers: headers})
       .map(res=>console.log(res.json()));
     }
   
