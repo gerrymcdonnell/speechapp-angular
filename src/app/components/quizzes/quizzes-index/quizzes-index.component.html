@@ -1,3 +1,39 @@
-<p>
-  quizzes-index works!
-</p>
+
+Testing cakephp 3 restapi words.json
+
+http://localhost/cake3restapi/words.json
+
+<a [routerLink]="['/add-question/']" class="btn btn-secondary">add</a>
+
+
+<h2>Quiz</h2>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let quiz of quizzes">    
+      
+        <div class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Quiz:      {{quiz.id}} {{quiz.title}}</h5>
+              <small>ID: {{quiz.id}}   </small>
+            </div>
+
+
+
+            
+
+            
+            
+        </div>
+
+
+        
+
+        
+<!--         <p class="mb-1">
+          <a [routerLink]="['/display-question/'+q.id]" class="btn btn-secondary">display</a>
+          <a [routerLink]="['/edit-question/'+q.id]" class="btn btn-secondary">Edit</a>
+          <button class="btn btn-danger" (click)="onDeleteClick(q.id)">delete</button>
+        </p> -->
+
+    </li>
+</ul>
+<p></p>

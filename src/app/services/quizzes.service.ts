@@ -35,13 +35,12 @@ export class QuizzesService {
   }
 
 
-  /*getQuestion(id:number){
-        
+  getQuiz(id:number){        
     var headers=this.buildAuthHeader();
 
-    return this.http.get('http://localhost/cake3restapi/questions/'+id+'.json',{headers: headers})
+    return this.http.get('http://localhost/cake3restapi/quizzes/'+id+'.json',{headers: headers})
     .map(res=>res.json());
-  }*/
+  }
 
 
   

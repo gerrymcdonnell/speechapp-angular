@@ -1,0 +1,61 @@
+<h2>Display Quiz id:{{quiz.id}}</h2>
+<ul class="list-group">
+    <li class="list-group-item">    
+      
+        <div  class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Question:      {{quiz.title}}</h5>
+              <small>ID: {{quiz.id}}   </small>
+            </div>
+
+            <p class="mb-1">
+                Question: 
+            </p>
+
+            <!-- loop questions-->
+            <div class="list-group-item" *ngFor="let question of quiz.questions">    
+              {{question.question}}
+
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Question:      {{question.question}}</h5>
+                <small>ID: {{question.id}}   </small>
+              </div>
+  
+              <p class="mb-1">
+                  Answers: 
+              </p>
+  
+              <ul>
+                  <li> A {{question.ans1}}</li>
+                  <li> B {{question.ans2}}</li>
+                  <li> C {{question.ans3}}</li>
+                  <li> D {{question.ans4}}</li>
+                  <hr>
+                  <li> Correct: {{question.correctans}}</li>
+                  <li> Difficulty: {{question.difficulty}}</li>
+              </ul>
+
+            </div>           
+            <!-- loop questions-->
+
+            <hr>
+                <ul>
+                  <li>Created: {{quiz.created|date: 'dd/MM/yyyy hh:mm:ss'}}</li>
+                  <li>Modified: {{quiz.modified|date: 'dd/MM/yyyy hh:mm:ss'}}</li>
+                </ul>   
+            
+            </div>
+
+
+        
+
+        
+        <p class="mb-1">
+          <a [routerLink]="['/display-quiz/'+quiz.id]" class="btn btn-secondary">display</a>
+          <a [routerLink]="['/edit-quiz/'+quiz.id]" class="btn btn-secondary">Edit</a>
+          <button class="btn btn-danger" (click)="onDeleteClick(quiz.id)">delete</button>
+      </p>
+
+    </li>
+</ul>
+<p></p>

@@ -21,6 +21,7 @@ import {RouterModule,Routes} from '@angular/router';
 
 //main service to get data via REST
 import { SpeechAppService } from './services/speechapp.service';
+import {QuizzesService} from './services/quizzes.service';
 
 import {QuestionsService} from'./services/questions.service';
 import { EditQuestionComponent } from './components/questions/edit-question/edit-question.component';
@@ -28,6 +29,7 @@ import { AddQuestionComponent } from './components/questions/add-question/add-qu
 import { DisplayQuestionComponent } from './components/questions/display-question/display-question.component';
 //Quiz
 import { QuizzesIndexComponent } from './components/quizzes/quizzes-index/quizzes-index.component';
+import { DisplayQuizComponent } from './components/quizzes/display-quiz/display-quiz.component';
 
 
 //create routes for app
@@ -45,6 +47,7 @@ const appRoutes:Routes=[
   {path:'display-question/:id',component:DisplayQuestionComponent} ,
 
   {path:'quizzes-index',component:QuizzesIndexComponent},
+  {path:'display-quiz/:id',component:DisplayQuizComponent} ,
   {path:'**',component:PageNotFoundComponent}
 
 ]
@@ -55,7 +58,7 @@ const appRoutes:Routes=[
     WordindexComponent,
     NavbarComponent,PageNotFoundComponent,
     AddWordComponent,EditwordComponent, 
-    QuestionindexComponent, EditQuestionComponent, AddQuestionComponent, DisplayQuestionComponent, QuizzesIndexComponent
+    QuestionindexComponent, EditQuestionComponent, AddQuestionComponent, DisplayQuestionComponent, QuizzesIndexComponent, DisplayQuizComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +68,7 @@ const appRoutes:Routes=[
     
     /*FlashMessagesModule.forRoot()*/
   ],
-  providers: [SpeechAppService,QuestionsService],
+  providers: [SpeechAppService,QuestionsService,QuizzesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
