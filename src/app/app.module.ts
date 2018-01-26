@@ -26,6 +26,8 @@ import {QuestionsService} from'./services/questions.service';
 import { EditQuestionComponent } from './components/questions/edit-question/edit-question.component';
 import { AddQuestionComponent } from './components/questions/add-question/add-question.component';
 import { DisplayQuestionComponent } from './components/questions/display-question/display-question.component';
+//Quiz
+import { QuizzesIndexComponent } from './components/quizzes/quizzes-index/quizzes-index.component';
 
 
 //create routes for app
@@ -41,6 +43,8 @@ const appRoutes:Routes=[
   {path:'edit-question/:id',component:EditQuestionComponent} ,
   {path:'add-question',component:AddQuestionComponent} ,
   {path:'display-question/:id',component:DisplayQuestionComponent} ,
+
+  {path:'quizzes-index',component:QuizzesIndexComponent},
   {path:'**',component:PageNotFoundComponent}
 
 ]
@@ -51,7 +55,7 @@ const appRoutes:Routes=[
     WordindexComponent,
     NavbarComponent,PageNotFoundComponent,
     AddWordComponent,EditwordComponent, 
-    QuestionindexComponent, EditQuestionComponent, AddQuestionComponent, DisplayQuestionComponent
+    QuestionindexComponent, EditQuestionComponent, AddQuestionComponent, DisplayQuestionComponent, QuizzesIndexComponent
   ],
   imports: [
     BrowserModule,
