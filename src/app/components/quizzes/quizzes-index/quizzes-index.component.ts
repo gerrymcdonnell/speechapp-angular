@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Question} from '../../../models/question';
-import {Quiz} from '../../../models/quizzes';
+import {Quiz} from '../../../models/quiz';
 
 import {QuizzesService} from '../../../services/quizzes.service';
 
@@ -20,19 +20,15 @@ export class QuizzesIndexComponent implements OnInit {
   //Service must be added to component constructor
   constructor(public dataService:QuizzesService){
       
-      //console.log(words);
-      
-      //use data service
-      this.dataService.getQuizzes().subscribe(quizzes=>{
-          this.quizzes=quizzes;
-          console.log(this.quizzes);
-      })
-
+    //use data service
+    this.dataService.getQuizzes().subscribe(quizzes=>{
+      this.quizzes=quizzes;
+      console.log(this.quizzes);
+    })
   }//end constructor
 
   ngOnInit() {
-  }
-
-
-
+  } 
 }
+
+
