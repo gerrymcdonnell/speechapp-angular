@@ -45,6 +45,17 @@ export class QuestionsService {
   }
 
 
+  getRandomQuestion(){
+        
+    var headers=this.buildAuthHeader();
+
+    return this.http.get('http://localhost/cake3restapi/questions/getrandomquestion.json',{headers: headers})
+    .map(res=>res.json());
+  }
+
+
+
+
   updateWord(question:Question){        
 
       console.log("doing update via PUT request");
@@ -68,7 +79,7 @@ export class QuestionsService {
   //add new word
   addQuestion(question:Question){
       
-    console.log("doing Add via POST request");
+    console.log(question);
 
     var headers=this.buildAuthHeader();
     
@@ -77,17 +88,22 @@ export class QuestionsService {
   }
 
 
-    //ERRORS here
-    //submit question anwser for a questions
-    addAnswerQuestion(questionAnswer:QuestionAnswer){
     
-      console.log(questionAnswer);
+  //ERRORS here
+  //submit question anwser for a questions
+  addAnswerQuestion(questionAnswer:QuestionAnswer){
   
-      var headers=this.buildAuthHeader();
-      
-      return this.http.post('http://localhost/cake3restapi/questions-answers.json',questionAnswer,{headers: headers})
-      .map(res=>console.log(res.json()));
-    }
+    console.log(JSON.stringify(questionAnswer));
+
+    var headers=this.buildAuthHeader();
+    // /add works
+    //var url='http://localhost/cake3restapi/questions-answers.json';
+
+    var url='http://localhost/cake3restapi/questions-answers/add';
+    
+    //error with ther res.json -dont know why
+    return this.http.post(url,questionAnswer,{headers: headers});//.map(res=>res.json());
+  }
   
 
 }

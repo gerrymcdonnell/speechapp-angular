@@ -30,6 +30,8 @@ import { DisplayQuestionComponent } from './components/questions/display-questio
 //Quiz
 import { QuizzesIndexComponent } from './components/quizzes/quizzes-index/quizzes-index.component';
 import { DisplayQuizComponent } from './components/quizzes/display-quiz/display-quiz.component';
+import { RandomquestionComponent } from './components/questions/randomquestion/randomquestion.component';
+
 
 
 //create routes for app
@@ -45,6 +47,7 @@ const appRoutes:Routes=[
   {path:'edit-question/:id',component:EditQuestionComponent} ,
   {path:'add-question',component:AddQuestionComponent} ,
   {path:'display-question/:id',component:DisplayQuestionComponent} ,
+  {path:'random-question',component:RandomquestionComponent} ,
 
   {path:'quizzes-index',component:QuizzesIndexComponent},
   {path:'display-quiz/:id',component:DisplayQuizComponent} ,
@@ -58,7 +61,7 @@ const appRoutes:Routes=[
     WordindexComponent,
     NavbarComponent,PageNotFoundComponent,
     AddWordComponent,EditwordComponent, 
-    QuestionindexComponent, EditQuestionComponent, AddQuestionComponent, DisplayQuestionComponent, QuizzesIndexComponent, DisplayQuizComponent
+    QuestionindexComponent, EditQuestionComponent, AddQuestionComponent, DisplayQuestionComponent, QuizzesIndexComponent, DisplayQuizComponent, RandomquestionComponent
   ],
   imports: [
     BrowserModule,

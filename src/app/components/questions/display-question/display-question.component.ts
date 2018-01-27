@@ -54,18 +54,23 @@ export class DisplayQuestionComponent implements OnInit {
    * TESTING - error not being added to DB
    * answer a question by creating a record for questions-answers
    */
-  onAnswerClick(question_id:number,selectedanswer){
+  onAnswerClick(question_id:number,selectedanswer:number){
     
     console.log('selectedanswer= '+selectedanswer);
 
     
+    //test data ignoring form input
     this.questionAnswer.user_id=1;
     this.questionAnswer.question_id=question_id;
     this.questionAnswer.answerindex=selectedanswer;
 
+ 
+
+    //console.log("answerquestion: "+this.questionAnswer); 
+
     this.dataService.addAnswerQuestion(this.questionAnswer).subscribe(q => {
       
-      //console.log(+q); 
+      console.log("answerquestion: "+q); 
       
       //this.question = q;     
       
