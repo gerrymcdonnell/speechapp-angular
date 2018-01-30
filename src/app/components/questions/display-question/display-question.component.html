@@ -23,30 +23,36 @@
             </ul>        
            
             <br>
+
+
+
             <!-- answer options -->
             <ul>
-            <li><input type="radio" [(ngModel)]="selectedanswer" name="selectedanswer" value=1>{{question.ans1}}</li>
-            <li><input type="radio"  [(ngModel)]="selectedanswer" name="selectedanswer" value=2> {{question.ans2}}</li>
-            <li><input type="radio"  [(ngModel)]="selectedanswer" name="selectedanswer" value=3> {{question.ans3}}</li>
-            <li><input type="radio"  [(ngModel)]="selectedanswer" name="selectedanswer" value=4> {{question.ans4}}</li>
-
-                
+            <li><input type="radio" [(ngModel)]="questionAnswer.answerindex" name="answerindex" value=1>{{question.ans1}}</li>
+            <li><input type="radio"  [(ngModel)]="questionAnswer.answerindex" name="answerindex" value=2> {{question.ans2}}</li>
+            <li><input type="radio"  [(ngModel)]="questionAnswer.answerindex" name="answerindex" value=3> {{question.ans3}}</li>
+            <li><input type="radio"  [(ngModel)]="questionAnswer.answerindex" name="answerindex" value=4> {{question.ans4}}</li>               
             </ul>
             <!-- answer options -->
+
+
+
             <hr>
                 <ul>
                   <li>Created: {{question.created|date: 'dd/MM/yyyy hh:mm:ss'}}</li>
                   <li>Modified: {{question.modified|date: 'dd/MM/yyyy hh:mm:ss'}}</li>
                 </ul>   
             
-            </div>
+        </div>
+
+        
 
                    
 
         
         <p class="mb-1">
-        <!-- to do pass values to function here -->
-          <button class="btn btn-danger" (click)="onAnswerClick(question.id,selectedanswer)">Answer</button>
+        <!-- to do pass values to function here -->      
+        <button class="btn btn-danger" (click)="onAnswerClick(question.id)">Answer</button>
 
           <a [routerLink]="['/display-question/'+question.id]" class="btn btn-secondary">display</a>
           <a [routerLink]="['/edit-question/'+question.id]" class="btn btn-secondary">Edit</a>

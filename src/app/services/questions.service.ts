@@ -93,13 +93,13 @@ export class QuestionsService {
   //submit question anwser for a questions
   addAnswerQuestion(questionAnswer:QuestionAnswer){
   
-    console.log(JSON.stringify(questionAnswer));
+    console.log(questionAnswer);
 
     var headers=this.buildAuthHeader();
     // /add works
-    //var url='http://localhost/cake3restapi/questions-answers.json';
+    var url='http://localhost/cake3restapi/questionsanswers';
 
-    var url='http://localhost/cake3restapi/questions-answers/add';
+    //var url='http://localhost/cake3restapi/questions-answers/add';
     
     //error with ther res.json -dont know why
     return this.http.post(url,questionAnswer,{headers: headers});//.map(res=>res.json());

@@ -13,8 +13,7 @@ import {Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class RandomquestionComponent implements OnInit {
 
-//works
-id:number;
+
 question:Question=new Object;
 questions:any[];
 
@@ -36,11 +35,9 @@ constructor(
  }
 
 ngOnInit() {
-  // Get ID which is the question id
-  this.id = this.route.snapshot.params['id'];
   
   // Get word with the id we pulled rom url 
-  this.dataService.getRandomQuestion(this.id).subscribe(q => {
+  this.dataService.getRandomQuestion().subscribe(q => {
     
     console.log("view question "+q.question);    
     
